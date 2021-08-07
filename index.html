@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Mulish"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="src/style.css" />
+
+    <link rel="shortcut icon" href="media/cheese.svg" />
+
+    <title>Weather App</title>
+
+    <title>HTML Revision</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="main-background">
+        <img class="logo-1" src="media/logo.svg" alt="Frenchies logo" />
+
+        <form class="EnterCity" id="displayCity">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city.."
+                class="input-field"
+                name="cityName"
+                id="enterCityInput"
+              />
+            </div>
+            <div class="col-3">
+              <input type="submit" class="btn-primary" value="Search" />
+            </div>
+          </div>
+        </form>
+
+        <div class="line"></div>
+
+        <div class="WeatherInfo">
+          <div class="row">
+            <div class="col">
+              <h1 class="title-1" id="cityName">Paris</h1>
+              <ul>
+                <li>
+                  <span id="dateTime"> Tuesday 09:38, overcast clouds </span>
+                </li>
+                <li>
+                  Humidity: <strong id="humidity"> 87% </strong>, Wind:
+                  <strong id="wind"> 4.63km/h</strong>
+                </li>
+              </ul>
+            </div>
+            <div class="col">
+              <div class="temperature-container">
+                <img
+                  class="img-1"
+                  src="media/cloud.svg"
+                  height="61px"
+                  width="61px"
+                />
+                <span class="temperature" id="mainTemperature">20</span>
+                <span class="unit">°C</span>
+              </div>
+            </div>
+
+            <div class="WeatherForcast">
+              <div class="col">
+                <div class="WeatherPreview">
+                  <div class="Week">
+                    <p>Tues</p>
+                    <img src="media/cloudy.svg" height="40px" width="40px" />
+                  </div>
+
+                  <div class="forcast-temperature">
+                    <span class="temperature-max">23°C</span>
+                    <span class="temperature-min">15°C</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="WeatherPreview">
+                  <div class="Week">
+                    <p>Wed</p>
+                    <img src="media/cloud.svg" height="40px" width="40px" />
+                  </div>
+
+                  <div class="forcast-temperature">
+                    <span class="temperature-max">23°C</span>
+                    <span class="temperature-min">15°C</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="WeatherPreview">
+                  <div class="Week">
+                    <p>Thu</p>
+                    <img src="media/cloudy.svg" height="40px" width="40px" />
+                  </div>
+
+                  <div class="forcast-temperature">
+                    <span class="temperature-max">21°C</span>
+                    <span class="temperature-min">16°C</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="WeatherPreview">
+                  <div class="Week">
+                    <p>Fri</p>
+                    <img src="media/rain.svg" height="40px" width="40px" />
+                  </div>
+
+                  <div class="forcast-temperature">
+                    <span class="temperature-max">20°C</span>
+                    <span class="temperature-min">11°C</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="WeatherPreview">
+                  <div class="Week">
+                    <p>Sat</p>
+                    <img src="media/sunny-day.svg" height="40px" width="40px" />
+                  </div>
+
+                  <div class="forcast-temperature">
+                    <span class="temperature-max">25°C</span>
+                    <span class="temperature-min">15°C</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="WeatherPreview">
+                  <div class="Week">
+                    <p>Sun</p>
+                    <img src="media/sunny-day.svg" height="40px" width="40px" />
+                  </div>
+
+                  <div class="forcast-temperature">
+                    <span class="temperature-max"> 24°C </span>
+                    <span class="temperature-min"> 13°C </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="signature">Coded with ❤ by Lisa</div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="src/app.js"></script>
+</html>
