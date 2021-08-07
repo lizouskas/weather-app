@@ -18,14 +18,14 @@ let days = [
 ];
 let day = days[now.getDay()];
 
-function formatTwoDigits(minutes) {
-  let minutesFormatted = "";
-  if (minutes < 10) {
-    minutesFormatted = `0${minutes}`;
+function formatTwoDigits(digits) {
+  let digitsFormatted = "";
+  if (digits < 10) {
+    digitsFormatted = `0${digits}`;
   } else {
-    minutesFormatted = `${minutes}`;
+    digitsFormatted = `${digits}`;
   }
-  return minutesFormatted;
+  return digitsFormatted;
 }
 
 dateTimeElement.innerHTML = `${day} ${formatTwoDigits(hours)}:${formatTwoDigits(
