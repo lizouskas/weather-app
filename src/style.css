@@ -179,3 +179,10 @@ li {
   text-align: center;
   font-weight: 200;
 }
+
+.signature a {
+  text-decoration: underline;
+  font-family: Source Sans Pro;
+  color: #c9976c;
+  font-weight: 600;
+}
