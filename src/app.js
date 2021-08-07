@@ -47,7 +47,7 @@ function changeName(event) {
   event.preventDefault();
   let cityNameElement = document.querySelector("#cityName");
   let cityName = document.querySelector("#enterCityInput").value;
-  cityNameElement.innerHTML = cityName;
+  cityNameElement.innerHTML = capitalizeFirstLetter(cityName);
 
   let apiKey = "0c93923d688a9bbdec4391d2217c6127";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
