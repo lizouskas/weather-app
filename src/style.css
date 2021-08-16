@@ -84,6 +84,7 @@ ul {
 li {
   display: list-item;
   list-style: none;
+  text-transform: capitalize;
 }
 
 .WeatherInfo li {

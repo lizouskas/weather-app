@@ -41,6 +41,9 @@ function WeatherCondition(response) {
 
   let wind = document.querySelector("#wind");
   wind.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+
+  let description = document.querySelector("#description");
+  description.innerHTML = response.data.weather[0].description;
 }
 
 function changeName(event) {
