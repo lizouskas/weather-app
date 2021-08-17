@@ -45,8 +45,8 @@ function WeatherCondition(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
 
-  let weatherIconElement = document.querySelector ("#weatherIcon");
-  weatherIconElement.innerHTML = 
+  let weatherIconElement = document.querySelector("#weatherIcon");
+  weatherIconElement.innerHTML = "http://openweathermap.org/img/wn/10d@2x.png";
 }
 
 function changeName(event) {
