@@ -32,7 +32,11 @@ dateTimeElement.innerHTML = `${day} ${formatTwoDigits(hours)}:${formatTwoDigits(
   minutes
 )}`;
 
-function WeatherCondition(response) {
+function weatherCondition(response) {
+  cityName = response.data.name;
+  let cityNameElement = document.querySelector("#cityName");
+  cityNameElement.innerHTML = capitalizeFirstLetter(cityName);
+
   let mainTempElement = document.querySelector("#mainTemperature");
   mainTempElement.innerHTML = Math.round(response.data.main.temp);
 
@@ -46,23 +50,33 @@ function WeatherCondition(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
 
   let weatherIconElement = document.querySelector("#weatherIcon");
-  weatherIconElement.innerHTML = "http://openweathermap.org/img/wn/10d@2x.png";
+  weatherIconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
+  weatherIconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-function changeName(event) {
-  event.preventDefault();
-  let cityNameElement = document.querySelector("#cityName");
-  let cityName = document.querySelector("#enterCityInput").value;
-  cityNameElement.innerHTML = capitalizeFirstLetter(cityName);
+function handleRequestError() {
+  alert("invalid city");
+}
 
+function processCityWeather(cityName) {
   let apiKey = "0c93923d688a9bbdec4391d2217c6127";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
   // use city name for api call
-  axios.get(apiUrl).then(WeatherCondition);
+  axios.get(apiUrl).then(weatherCondition).catch(handleRequestError);
+}
+
+function handleCitySubmit(event) {
+  event.preventDefault();
+  let cityName = document.querySelector("#enterCityInput").value;
+  processCityWeather(cityName);
 }
 
 let submitForm = document.querySelector("#displayCity");
-submitForm.addEventListener("submit", changeName);
+submitForm.addEventListener("submit", handleCitySubmit);
 
-Search("Paris");
+processCityWeather("Paris");
