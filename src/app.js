@@ -61,3 +61,5 @@ function changeName(event) {
 
 let submitForm = document.querySelector("#displayCity");
 submitForm.addEventListener("submit", changeName);
+
+Search("Paris");
