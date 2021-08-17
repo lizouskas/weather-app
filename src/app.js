@@ -33,17 +33,20 @@ dateTimeElement.innerHTML = `${day} ${formatTwoDigits(hours)}:${formatTwoDigits(
 )}`;
 
 function WeatherCondition(response) {
-  let mainTemp = document.querySelector("#mainTemperature");
-  mainTemp.innerHTML = Math.round(response.data.main.temp);
+  let mainTempElement = document.querySelector("#mainTemperature");
+  mainTempElement.innerHTML = Math.round(response.data.main.temp);
 
-  let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = `${Math.round(response.data.main.humidity)} %`;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${Math.round(response.data.main.humidity)} %`;
 
-  let wind = document.querySelector("#wind");
-  wind.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
 
-  let description = document.querySelector("#description");
-  description.innerHTML = response.data.weather[0].description;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+
+  let weatherIconElement = document.querySelector ("#weatherIcon");
+  weatherIconElement.innerHTML = 
 }
 
 function changeName(event) {
