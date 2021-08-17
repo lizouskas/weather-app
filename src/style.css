@@ -53,6 +53,12 @@ body {
   box-shadow: none;
 }
 
+.btn-primary:active {
+  background-color: #285467;
+  border: none;
+  box-shadow: none;
+}
+
 .row {
   display: flex;
 }
