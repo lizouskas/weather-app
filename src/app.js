@@ -1,13 +1,8 @@
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
-let dateTimeElement = document.querySelector("#dateTime");
 
-let now = new Date();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-
-let days = [
+const days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -16,7 +11,6 @@ let days = [
   "Friday",
   "Saturday",
 ];
-let day = days[now.getDay()];
 
 function formatTwoDigits(digits) {
   let digitsFormatted = "";
@@ -28,11 +22,20 @@ function formatTwoDigits(digits) {
   return digitsFormatted;
 }
 
-dateTimeElement.innerHTML = `${day} ${formatTwoDigits(hours)}:${formatTwoDigits(
-  minutes
-)}`;
+function handleWeatherUpdate(response) {
+  // handle date update
+  let dateTimeElement = document.querySelector("#dateTime");
 
-function weatherCondition(response) {
+  let now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let day = days[now.getDay()];
+
+  dateTimeElement.innerHTML = `${day} ${formatTwoDigits(
+    hours
+  )}:${formatTwoDigits(minutes)}`;
+
+  // Update weather elements
   cityName = response.data.name;
   let cityNameElement = document.querySelector("#cityName");
   cityNameElement.innerHTML = capitalizeFirstLetter(cityName);
@@ -67,7 +70,7 @@ function processCityWeather(cityName) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
   // use city name for api call
-  axios.get(apiUrl).then(weatherCondition).catch(handleRequestError);
+  axios.get(apiUrl).then(handleWeatherUpdate).catch(handleRequestError);
 }
 
 function handleCitySubmit(event) {
