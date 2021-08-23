@@ -24,7 +24,7 @@ function formatTwoDigits(digits) {
 
 function handleWeatherUpdate(response) {
   // handle date update
-  let dateTimeElement = document.querySelector("#dateTime");
+  let dateTimeElement = document.querySelector("#date-time");
 
   let now = new Date();
   let hours = now.getHours();
@@ -37,10 +37,10 @@ function handleWeatherUpdate(response) {
 
   // Update weather elements
   cityName = response.data.name;
-  let cityNameElement = document.querySelector("#cityName");
+  let cityNameElement = document.querySelector("#city-name");
   cityNameElement.innerHTML = capitalizeFirstLetter(cityName);
 
-  let mainTempElement = document.querySelector("#mainTemperature");
+  let mainTempElement = document.querySelector("#main-temperature");
   mainTempElement.innerHTML = Math.round(response.data.main.temp);
 
   let humidityElement = document.querySelector("#humidity");
@@ -52,7 +52,7 @@ function handleWeatherUpdate(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
 
-  let weatherIconElement = document.querySelector("#weatherIcon");
+  let weatherIconElement = document.querySelector("#weather-icon");
   weatherIconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -75,11 +75,11 @@ function processCityWeather(cityName) {
 
 function handleCitySubmit(event) {
   event.preventDefault();
-  let cityName = document.querySelector("#enterCityInput").value;
+  let cityName = document.querySelector("#enter-city-input").value;
   processCityWeather(cityName);
 }
 
-let submitForm = document.querySelector("#displayCity");
+let submitForm = document.querySelector("#display-city");
 submitForm.addEventListener("submit", handleCitySubmit);
 
 processCityWeather("Paris");

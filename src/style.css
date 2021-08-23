@@ -13,7 +13,7 @@ body {
   height: 90%;
 }
 
-.EnterCity {
+.enter-city {
   margin: 32px 0px 32px 0px;
   display: block;
 }
@@ -68,7 +68,7 @@ body {
   border-bottom: 1px solid #e8e8e8;
 }
 
-.WeatherInfo {
+.weather-info {
   margin: 32px 0px 0px 0px;
 }
 
@@ -93,7 +93,7 @@ li {
   text-transform: capitalize;
 }
 
-.WeatherInfo li {
+.weather-info li {
   font-weight: 400;
   font-family: Source Sans pro;
   margin-bottom: 4px;
@@ -101,7 +101,7 @@ li {
   font-size: 16px;
 }
 
-.WeatherInfo strong {
+.weather-info strong {
   color: #5faa99;
   font-family: Source Sans Pro;
   font-size: 16px;
@@ -133,13 +133,13 @@ li {
   margin: 0 16px 40px 0;
 }
 
-.WeatherForecast {
+.weather-forecast {
   text-align: center;
   margin: 16px auto 0px auto;
   display: flex;
 }
 
-.Week {
+.week {
   font-family: Source Sans Pro;
   font-size: 18px;
   text-align: center;
@@ -148,7 +148,7 @@ li {
   margin: 0px;
 }
 
-.WeatherPreview p {
+.Weather-preview p {
   margin-bottom: 16px;
 }
 
@@ -173,7 +173,7 @@ li {
   padding: 4px 4px 4px 4px;
 }
 
-.WeatherForecast .col {
+.Weather-forecast .col {
   padding: 20px;
 }
 
