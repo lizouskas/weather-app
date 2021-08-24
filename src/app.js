@@ -1,5 +1,5 @@
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+function capitalizeFirstLetter(x) {
+  return x.charAt(0).toUpperCase() + x.slice(1);
 }
 
 const days = [
@@ -20,6 +20,12 @@ function formatTwoDigits(digits) {
     digitsFormatted = `${digits}`;
   }
   return digitsFormatted;
+}
+
+function displayForecast(response) {
+  let daily = response.data.daily[1].temp.max;
+  let max = document.querySelector(".temperature-max");
+  max.innerHTML = Math.round(daily);
 }
 
 function getForecast(coordinates) {
@@ -66,7 +72,7 @@ function handleWeatherUpdate(response) {
 
   weatherIconElement.setAttribute("alt", response.data.weather[0].description);
 
-  console.log(response);
+  getForecast(response.data.coord);
 }
 
 function handleRequestError() {
