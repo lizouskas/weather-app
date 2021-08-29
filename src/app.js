@@ -22,10 +22,38 @@ function formatTwoDigits(digits) {
   return digitsFormatted;
 }
 
+function formatDegrees(x) {
+  return `${Math.round(x)}°C`;
+}
+
 function displayForecast(response) {
-  let daily = response.data.daily[1].temp.max;
-  let max = document.querySelector(".temperature-max");
-  max.innerHTML = Math.round(daily);
+  let day_index = 1;
+
+  let now = new Date();
+  let today_day_of_week = now.getDay();
+
+  document.querySelectorAll(".weather-preview").forEach((week_element) => {
+    let day = response.data.daily[day_index];
+    let day_of_week_index = (today_day_of_week + day_index) % 7;
+
+    week_element.querySelector(".week p").innerHTML = days[
+      day_of_week_index
+    ].substring(0, 3);
+
+    let max_span = week_element.querySelector(".temperature-max");
+    max_span.innerHTML = formatDegrees(day.temp.max);
+
+    let min_span = week_element.querySelector(".temperature-min");
+    min_span.innerHTML = formatDegrees(day.temp.min);
+
+    let weatherIconElement = week_element.querySelector("img");
+    weatherIconElement.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`
+    );
+
+    day_index += 1;
+  });
 }
 
 function getForecast(coordinates) {
