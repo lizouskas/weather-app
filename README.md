@@ -1,7 +1,2 @@
 # weather-app
-I built a  JavaScript weather app in SheCodes Plus, an 
-advanced 8-week JavaScript coding workshop. Building upon my 
-previously-gained knowledge, I also became skilled in Bootstrap, 
-API’s, real-life development workflow, hosting, and advanced 
-JavaScript. I combined all of these skills to create a fully-functioning 
-weather app.
+I developed a comprehensive weather application using JavaScript during the SheCodes Plus program, an intensive 8-week workshop focused on advanced JavaScript coding. This experience not only honed my existing expertise but also equipped me with proficiency in Bootstrap, API integration, real-world development processes, hosting, and advanced JavaScript techniques. I seamlessly integrated all of these skills to produce a highly functional weather application.
